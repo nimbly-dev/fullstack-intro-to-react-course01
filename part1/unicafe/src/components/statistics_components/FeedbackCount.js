@@ -1,9 +1,9 @@
 import React from "react";
 
-const FeedBackCount = (props) => {
+const FeedBackCount = ({ totalFeedback }) => {
     return (
         <p>
-            Total Feedbacks: { props.totalFeedback}
+            Total Feedbacks: {totalFeedback}
         </p>
     )
 }

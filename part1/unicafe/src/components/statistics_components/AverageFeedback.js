@@ -1,8 +1,8 @@
 import React from "react";
 
-const AverageFeedback = (props) => {
+const AverageFeedback = ({ feedbackPositiveCount, feedbackNegativeCount, totalFeedbacks }) => {
     const averageFeedback =
-        (props.feedbackPositiveCount - props.feedbackNegativeCount) / props.totalFeedbacks
+        (feedbackPositiveCount - feedbackNegativeCount) / totalFeedbacks
     return (
         <p>
             Average Feedback: {averageFeedback}
