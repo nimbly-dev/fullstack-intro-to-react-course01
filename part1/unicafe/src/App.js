@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 //Components
 const Header = () => {
   return (
@@ -17,6 +18,33 @@ const Feedback = (props) => {
   )
 }
 
+const FeedBackCount = (props) => {
+  return (
+    <p>
+      Total Feedbacks: { props.totalFeedback}
+    </p>
+  )
+}
+
+const AverageFeedback = (props) => {
+  const averageFeedback =
+    (props.feedbackPositiveCount - props.feedbackNegativeCount) / props.totalFeedbacks
+  return (
+    <p>
+      Average Feedback: {averageFeedback}
+    </p>
+  )
+}
+
+const PositiveFeedbackAverage = (props) => {
+  const positiveFeedbackAverage = (props.feedbackPositiveCount / props.totalFeedbacks) * 100
+  return (
+    <p>
+      Positive Feedback Average: {positiveFeedbackAverage}%
+    </p>
+  )
+}
+
 const Statistics = (props) => {
   return (
     <div>
@@ -24,6 +52,19 @@ const Statistics = (props) => {
       <Feedback feedbackName={props.feedback[0].name} feedbackCount={props.feedback[0].count} />
       <Feedback feedbackName={props.feedback[1].name} feedbackCount={props.feedback[1].count} />
       <Feedback feedbackName={props.feedback[2].name} feedbackCount={props.feedback[2].count} />
+      <FeedBackCount
+        totalFeedback={props.feedback[0].count + props.feedback[1].count + props.feedback[2].count}
+      />
+      <AverageFeedback
+        feedbackPositiveCount={props.feedback[0].count}
+        feedbackNegativeCount={props.feedback[2].count}
+        totalFeedbacks={props.feedback[0].count + props.feedback[1].count + props.feedback[2].count}
+      />
+      <PositiveFeedbackAverage
+        feedbackPositiveCount={props.feedback[0].count}
+        feedbackNegativeCount={props.feedback[2].count}
+        totalFeedbacks={props.feedback[0].count + props.feedback[1].count + props.feedback[2].count}
+      />
     </div>
   )
 }
@@ -56,7 +97,7 @@ const App = () => {
         count: neutral
       },
       {
-        name: "Count",
+        name: "Bad",
         count: bad
       }
     ]
