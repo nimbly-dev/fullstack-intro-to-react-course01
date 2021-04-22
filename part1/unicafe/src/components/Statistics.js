@@ -17,25 +17,44 @@ const Statistics = ({ feedback }) => { // NEEDS IMPROVEMENT
         )
     } else {
         return (
-            <div>
-                <h3>Statistics: </h3>
-                <Statistic feedbackName={feedback[0].name} feedbackCount={feedback[0].count} />
-                <Statistic feedbackName={feedback[1].name} feedbackCount={feedback[1].count} />
-                <Statistic feedbackName={feedback[2].name} feedbackCount={feedback[2].count} />
-                <FeedBackCount
-                    totalFeedback={feedback[0].count + feedback[1].count + feedback[2].count}
-                />
-                <AverageFeedback
-                    feedbackPositiveCount={feedback[0].count}
-                    feedbackNegativeCount={feedback[2].count}
-                    totalFeedbacks={feedback[0].count + feedback[1].count + feedback[2].count}
-                />
-                <PositiveFeedbackAverage
-                    feedbackPositiveCount={feedback[0].count}
-                    feedbackNegativeCount={feedback[2].count}
-                    totalFeedbacks={feedback[0].count + feedback[1].count + feedback[2].count}
-                />
-            </div>
+            <table>
+                <tr>
+                    <td><Statistic feedbackName={feedback[0].name} feedbackCount={feedback[0].count} /></td>
+                </tr>
+                <tr>
+                    <td><Statistic feedbackName={feedback[1].name} feedbackCount={feedback[1].count} /></td>
+                </tr>
+                <tr>
+                    <td><Statistic feedbackName={feedback[2].name} feedbackCount={feedback[2].count} /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <FeedBackCount
+                            totalFeedback={feedback[0].count + feedback[1].count + feedback[2].count}
+                        />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <AverageFeedback
+                            feedbackPositiveCount={feedback[0].count}
+                            feedbackNegativeCount={feedback[2].count}
+                            totalFeedbacks={feedback[0].count + feedback[1].count + feedback[2].count}
+                        />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <PositiveFeedbackAverage
+                            feedbackPositiveCount={feedback[0].count}
+                            feedbackNegativeCount={feedback[2].count}
+                            totalFeedbacks={feedback[0].count + feedback[1].count + feedback[2].count}
+                        />
+                    </td>
+                </tr>
+            </table>
         )
     }
 }

@@ -2,9 +2,9 @@ import React from "react";
 
 const FeedBackCount = ({ totalFeedback }) => {
     return (
-        <p>
+        <span>
             Total Feedbacks: {totalFeedback}
-        </p>
+        </span>
     )
 }
 export default FeedBackCount

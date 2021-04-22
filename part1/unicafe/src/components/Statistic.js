@@ -3,7 +3,7 @@ import React from "react";
 const Statistic = ({ feedbackName, feedbackCount }) => {
     return (
         <div>
-            <p>{feedbackName}: {feedbackCount}</p>
+            <span>{feedbackName}: {feedbackCount}</span>
         </div>
     )
 }

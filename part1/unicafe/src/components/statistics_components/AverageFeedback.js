@@ -4,9 +4,9 @@ const AverageFeedback = ({ feedbackPositiveCount, feedbackNegativeCount, totalFe
     const averageFeedback =
         (feedbackPositiveCount - feedbackNegativeCount) / totalFeedbacks
     return (
-        <p>
+        <span>
             Average Feedback: {averageFeedback}
-        </p>
+        </span>
     )
 }
 

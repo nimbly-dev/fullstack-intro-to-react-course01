@@ -52,8 +52,9 @@ const App = () => {
       <Button text='Good' handleClick={() => handleGoodClick(good + 1)} />
       <Button text='Neutral' handleClick={() => handleNeutralClick(neutral + 1)} />
       <Button text='Bad' handleClick={() => handleBadClick(bad + 1)} />
+      <br /><br />
       <Statistics feedback={feedbacks.feedback} />
-    </div>
+    </div >
   )
 
 }
