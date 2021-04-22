@@ -1,81 +1,11 @@
 import React, { useState } from 'react'
 
+//Imports Components
+import Statistics from "./components/Statistics.js";
+import Header from "./components/Header.js";
+import Button from "./components/Button.js";
 
-//Components
-const Header = () => {
-  return (
-    <h2>
-      Give Feedback
-    </h2>
-  )
-}
 
-const Feedback = (props) => {
-  return (
-    <div>
-      <p>{props.feedbackName}: {props.feedbackCount}</p>
-    </div>
-  )
-}
-
-const FeedBackCount = (props) => {
-  return (
-    <p>
-      Total Feedbacks: { props.totalFeedback}
-    </p>
-  )
-}
-
-const AverageFeedback = (props) => {
-  const averageFeedback =
-    (props.feedbackPositiveCount - props.feedbackNegativeCount) / props.totalFeedbacks
-  return (
-    <p>
-      Average Feedback: {averageFeedback}
-    </p>
-  )
-}
-
-const PositiveFeedbackAverage = (props) => {
-  const positiveFeedbackAverage = (props.feedbackPositiveCount / props.totalFeedbacks) * 100
-  return (
-    <p>
-      Positive Feedback Average: {positiveFeedbackAverage}%
-    </p>
-  )
-}
-
-const Statistics = (props) => {
-  return (
-    <div>
-      <h3>Statistics: </h3>
-      <Feedback feedbackName={props.feedback[0].name} feedbackCount={props.feedback[0].count} />
-      <Feedback feedbackName={props.feedback[1].name} feedbackCount={props.feedback[1].count} />
-      <Feedback feedbackName={props.feedback[2].name} feedbackCount={props.feedback[2].count} />
-      <FeedBackCount
-        totalFeedback={props.feedback[0].count + props.feedback[1].count + props.feedback[2].count}
-      />
-      <AverageFeedback
-        feedbackPositiveCount={props.feedback[0].count}
-        feedbackNegativeCount={props.feedback[2].count}
-        totalFeedbacks={props.feedback[0].count + props.feedback[1].count + props.feedback[2].count}
-      />
-      <PositiveFeedbackAverage
-        feedbackPositiveCount={props.feedback[0].count}
-        feedbackNegativeCount={props.feedback[2].count}
-        totalFeedbacks={props.feedback[0].count + props.feedback[1].count + props.feedback[2].count}
-      />
-    </div>
-  )
-}
-
-const Button = (props) => {
-  return (
-    <button onClick={props.handleClick}>
-      {props.text}
-    </button>
-  )
-}
 
 /** ============================================================================================*/
 //Main App

@@ -9,7 +9,7 @@ Repo containing exercises on Fullstack part1 course
 - rm -rf .git
 
 
-# ExERCISES DONE
+# EXERCISES DONE
 
 Part 0:
 
