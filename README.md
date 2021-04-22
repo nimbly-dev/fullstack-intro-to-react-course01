@@ -29,4 +29,7 @@ Part 1:
     * 1.6:  Unicafe Step1 - DONE
     * 1.7:  Unicafe Step2 - DONE
     * 1.8:  Unicafe Step3 - DONE
+    * 1.9:  Unicafe Step4 - DONE
+    * 1.10: Unicafe Step5 - DONE
+    * 1.11*: Unicafe Step6 - DONE
 
