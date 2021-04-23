@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 
 //Import components
 import Button from "./components/Button.js"
+import Anecdotes from "./components/Anecdotes.js"
+
 
 const App = () => {
 
@@ -14,19 +16,28 @@ const App = () => {
     'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.'
   ]
 
-  const random = Math.floor(Math.random() * anecdotes.length);
-  const [selected, setSelected] = useState(0)
+  //zero-filled array initialization
+  const initValue = new Array(anecdotes.length).fill(0);
 
-  const giveRandomAnecdote = (randomAnecdote) => {
-    setSelected(randomAnecdote)
+  const [selected, setSelected] = useState(0)
+  const [voteValue, setVote] = useState(initValue)
+
+  const giveRandomAnecdote = () => {
+    const random = Math.floor(Math.random() * anecdotes.length);
+    setSelected(random)
+  }
+
+  const addVote = () => {
+    const newVote = [...voteValue]
+    newVote[selected]++;
+    setVote(newVote)
   }
 
   return (
     <div>
-      <p>
-        {anecdotes[selected]}
-      </p>
-      <Button name="Next anecdote" handleClick={() => giveRandomAnecdote(random)} />
+      <Anecdotes anecdotes={anecdotes[selected]} voteValue={voteValue[selected]} />
+      <Button name="Vote anecdote" handleClick={() => addVote(voteValue + 1)} />
+      <Button name="Next anecdote" handleClick={() => giveRandomAnecdote()} />
     </div>
   )
 }
