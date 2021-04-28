@@ -10,6 +10,10 @@ Repo containing exercises on Fullstack part1 course
 
 
 # EXERCISES DONE
+Course Information: https://github.com/nimbly-dev/fullstack-intro-to-react-course01/tree/main/part1/courseinfo
+Unicafe: https://github.com/nimbly-dev/fullstack-intro-to-react-course01/tree/main/part1/unicafe
+Anecdotes: https://github.com/nimbly-dev/fullstack-intro-to-react-course01/tree/main/part1/anecdotes
+
 
 Part 1: 
 
@@ -26,6 +30,7 @@ Part 1:
     * 1.9:  Unicafe Step4 - DONE
     * 1.10: Unicafe Step5 - DONE
     * 1.11*: Unicafe Step6 - DONE
+
     * 1.12*: Anecdotes step1 - DONE
     * 1.13*: Anecdotes step2 - DONE
     * 1.14*: Anecdotes step3 - DONE
