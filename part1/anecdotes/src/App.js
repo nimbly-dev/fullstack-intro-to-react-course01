@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 //Import components
 import Button from "./components/Button.js"
 import Anecdotes from "./components/Anecdotes.js"
-
+import PopularAnecdotes from "./components/PopularAnecdote.js"
 
 const App = () => {
 
@@ -21,6 +21,7 @@ const App = () => {
 
   const [selected, setSelected] = useState(0)
   const [voteValue, setVote] = useState(initValue)
+  const [popularAnecdote, setPopularAnecdote] = useState(0)
 
   const giveRandomAnecdote = () => {
     const random = Math.floor(Math.random() * anecdotes.length);
@@ -28,8 +29,11 @@ const App = () => {
   }
 
   const addVote = () => {
-    const newVote = [...voteValue]
+    const newVote = { ...voteValue }
     newVote[selected]++;
+    if (newVote[popularAnecdote] < newVote[selected]) {
+      setPopularAnecdote(selected)
+    }
     setVote(newVote)
   }
 
@@ -38,6 +42,7 @@ const App = () => {
       <Anecdotes anecdotes={anecdotes[selected]} voteValue={voteValue[selected]} />
       <Button name="Vote anecdote" handleClick={() => addVote(voteValue + 1)} />
       <Button name="Next anecdote" handleClick={() => giveRandomAnecdote()} />
+      <PopularAnecdotes anecdotes={anecdotes[popularAnecdote]} voteValue={voteValue[popularAnecdote]} />
     </div>
   )
 }
