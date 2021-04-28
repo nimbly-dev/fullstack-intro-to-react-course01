@@ -11,12 +11,6 @@ Repo containing exercises on Fullstack part1 course
 
 # EXERCISES DONE
 
-Part 0:
-
-    * 0.4: New Note - DONE
-    * 0.5: Single Page App - DONE
-    * 0.6: Single Page App New Note - DONE
-
 Part 1: 
 
     * 1.1 : Course Information Step1 - DONE
