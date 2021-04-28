@@ -32,4 +32,7 @@ Part 1:
     * 1.9:  Unicafe Step4 - DONE
     * 1.10: Unicafe Step5 - DONE
     * 1.11*: Unicafe Step6 - DONE
+    * 1.12*: Anecdotes step1 - DONE
+    * 1.13*: Anecdotes step2 - DONE
+    * 1.14*: Anecdotes step3 - DONE
 
